@@ -1,4 +1,4 @@
-# gigshub
+# List Manager
 
 A new Flutter project.
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gigshub/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:gigshub/providers/list_provider.dart';
 
@@ -41,9 +42,25 @@ class _AddItemState extends State<AddItem> {
               ),
               label: Text("Add Item"),
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Color(0xffc2bad8)),
+                  backgroundColor:
+                      MaterialStateProperty.all(Constants.lightGrey),
                   foregroundColor: MaterialStateProperty.all(Colors.black)),
               onPressed: () {
+                if (controller.text == "") {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text("Enter the name of the item"),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text("Okay"),
+                        )
+                      ],
+                    ),
+                  );
+                  return;
+                }
                 context.read<ListProvider>().addItem({"text": controller.text});
                 controller.clear();
               },

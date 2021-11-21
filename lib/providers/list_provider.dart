@@ -4,15 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ListProvider extends ChangeNotifier {
-  // List _items = [
-  //   {"id": 1, "text": "Milk"},
-  //   {"id": 2, "text": "Eggs"},
-  //   {"id": 3, "text": "Bread"},
-  //   {"id": 4, "text": "Juice"},
-  // ];
-
   List _items = [];
-  String api = "http://10.22.8.29:3000";
+  String api = "https://javeke-shopping-api.herokuapp.com";
 
   List get items => _items;
 

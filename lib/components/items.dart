@@ -27,7 +27,7 @@ class _ItemsState extends State<Items> {
         children: [
           AddItem(),
           Container(
-            height: 300,
+            height: 300, // TODO: Adjust this value
             width: MediaQuery.of(context).size.width,
             child: ListView.builder(
               itemCount: Provider.of<ListProvider>(context).items.length,
